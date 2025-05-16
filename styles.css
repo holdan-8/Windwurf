@@ -1,63 +1,72 @@
-.project-info {
-  max-width: 900px;
-  margin: 20px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.content-box {
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
-
-    max-width: 900px;
-  width: 100%;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-body {
+/* Reset and base layout */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('./wald.jpg'); 
+  background-image: url('./wald.jpg'); /* adjust path */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: #382e00;
-  
 }
+
+/* Flex wrapper to center content */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Overlay dims the background */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
-  padding: 40px 20px;
-  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  max-width: 960px;
+  width: 100%;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+/* Title */
 h1 {
-    /* should appear centered */
-    text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  text-align: center;
+  font-size: 2rem;
   color: #2c3e50;
 }
-#map {
-    /* should appear centered */
-    
-    background-color: #f0f0f0;
+
+/* Map styling */
+.map {
   width: 100%;
-  max-width: 900px;
   height: 500px;
   border-radius: 10px;
+  background-color: #f0f0f0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  margin-bottom: 20px;
 }
+
+/* Project info section */
+.project-info {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Control dropdown */
 .controls {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
+
 select {
   padding: 8px 12px;
   font-size: 1rem;
@@ -66,12 +75,31 @@ select {
   background-color: white;
   transition: border-color 0.3s ease;
 }
+
 select:focus {
   outline: none;
   border-color: #007acc;
 }
+
+/* Footer */
 footer {
-  margin-top: 30px;
-  font-size: 0.9rem;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  text-align: center;
   color: #777;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .map {
+    height: 350px;
+  }
+
+  .overlay {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
 }

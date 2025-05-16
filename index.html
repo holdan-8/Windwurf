@@ -1,54 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Windwurf</title>
     <link rel="stylesheet" href="node_modules/ol/ol.css" />
     <link rel="stylesheet" href="styles.css" />
-    <style></style>
   </head>
   <body>
     <div class="overlay">
-      <div class="content-box">
-    <section class="project-info">
       <h1>Windwurf</h1>
-      <p>
-        Stürme können in kurzer Zeit große Schäden in Wäldern verursachen. Diese
-        Windwurfschäden sind oft schwer flächendeckend zu erfassen, besonders in
-        abgelegenen Regionen. Mit diesem Tool lassen sich Veränderungen in der
-        Waldstruktur anhand von Satellitendaten visualisieren, um potenzielle
-        Sturmschäden schnell zu erkennen.
-      </p>
-      <p>
-        Über das Dropdown-Menü kann ein Zeitraum ausgewählt werden, um die
-        Veränderungen der Waldfläche vor und nach einem Sturmereignis zu
-        analysieren. Die Karte zeigt mithilfe verschiedener Darstellungen (z.B.
-        NDVI oder Falschfarben) die Unterschiede in der Vegetationsstruktur.
-      </p>
-      <p>
-        Dies unterstützt Forstbetriebe, Behörden und die Forschung dabei,
-        betroffene Gebiete effizient zu identifizieren und geeignete Maßnahmen
-        zu planen.
-      </p>
-    </section>
 
-    <div id="map" class="map"></div>
+      <section class="project-info">
+        <p>
+          Stürme können in kurzer Zeit große Schäden in Wäldern verursachen.
+          Diese Windwurfschäden sind oft schwer flächendeckend zu erfassen,
+          besonders in abgelegenen Regionen. Mit diesem Tool lassen sich
+          Veränderungen in der Waldstruktur anhand von Satellitendaten
+          visualisieren, um potenzielle Sturmschäden schnell zu erkennen.
+        </p>
+        <p>
+          Über das Dropdown-Menü kann ein Zeitraum ausgewählt werden, um die
+          Veränderungen der Waldfläche vor und nach einem Sturmereignis zu
+          analysieren. Die Karte zeigt mithilfe verschiedener Darstellungen
+          (z.B. NDVI oder Falschfarben) die Unterschiede in der
+          Vegetationsstruktur.
+        </p>
+        <p>
+          Dies unterstützt Forstbetriebe, Behörden und die Forschung dabei,
+          betroffene Gebiete effizient zu identifizieren und geeignete Maßnahmen
+          zu planen.
+        </p>
+      </section>
 
-    <div class="controls">
-      <label for="style">Change Layer Style:</label>
-      <select id="style">
-        <option value="trueColor">True Color</option>
-        <option value="falseColor">False Color</option>
-        <option value="ndvi">NDVI</option>
-        <option value="ndviPalettePlasma">NDVI w/ Palette 1</option>
-        <option value="ndviPaletteViridis">NDVI w/ Palette 2</option>
-      </select>
-    </div>
+      <div id="map" class="map"></div>
 
-    <footer>Data: Sentinel / Copernicus – Processed by EOX / OpenLayers</footer>
+      <div class="controls">
+        <label for="style">Darstellungsstil auswählen:</label>
+        <select id="style">
+          <option value="trueColor">True Color</option>
+          <option value="falseColor">False Color</option>
+          <option value="ndvi">NDVI</option>
+          <option value="ndviPalettePlasma">NDVI w/ Palette 1</option>
+          <option value="ndviPaletteViridis">NDVI w/ Palette 2</option>
+        </select>
+      </div>
 
-    <script type="module" src="main.js"></script>
+      <footer>
+        Datenquelle: Sentinel / Copernicus – Verarbeitung mit EOX & OpenLayers
+      </footer>
+
+      <script type="module" src="main.js"></script>
     </div>
   </body>
-  </div>
 </html>

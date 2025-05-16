@@ -1,19 +1,17 @@
 import Map from 'ol/Map.js';
-import View from 'ol/View.js';
 import TileLayer from 'ol/layer/WebGLTile.js';
 import GeoTIFF from 'ol/source/GeoTIFF.js';
-import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import TileLayer from 'ol/layer/WebGLTile.js';
 import GeoTIFF from 'ol/source/GeoTIFF.js';
 import proj4 from 'proj4';
-import { register } from 'ol/proj/proj4.js';
-import { get as getProjection } from 'ol/proj.js';
+import {register} from 'ol/proj/proj4.js';
+import {get as getProjection} from 'ol/proj.js';
 
 proj4.defs(
   'EPSG:2056',
   '+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 ' +
-  '+k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +units=m +no_defs'
+    '+k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +units=m +no_defs',
 );
 register(proj4);
 const projection = getProjection('EPSG:2056');
