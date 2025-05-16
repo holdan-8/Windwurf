@@ -26,6 +26,12 @@ const trueColor = {
   gamma: 1.1,
 };
 
+const arrayOfSources = [
+  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_19_masked.tif',
+  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_19_masked.tif',
+  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_21_masked.tif',
+];
+
 const ndvi = {
   color: [
     'interpolate',
@@ -90,17 +96,7 @@ const ndviPaletteViridis = {
   ],
 };
 
-const layer = new TileLayer({
-  style: trueColor,
-  source: new GeoTIFF({
-    normalize: false,
-    sources: [
-      {
-        url: 'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_1_masked_ZG_Int8_pos.tif',
-      },
-    ],
-  }),
-});
+const layer = new TileLayer();
 
 const map = new Map({
   target: 'map',
@@ -115,15 +111,42 @@ const map = new Map({
 
 const styles = {
   trueColor,
-  //  ndvi,
+  ndvi,
   ndviPalettePlasma,
   ndviPaletteViridis,
 };
 
 const styleSelector = document.getElementById('style');
+const sourceSelector = document.getElementById('source');
 
 function update() {
+  const sourceIndex = sourceSelector.value;
+  const selectedSource = arrayOfSources[sourceIndex];
   const style = styles[styleSelector.value];
+
+  if (!selectedSource) {
+    console.error('Source not found for index:', sourceIndex);
+    return;
+  }
+
+  if (!style) {
+    console.error('Style not found for value:', styleSelector.value);
+    return;
+  }
+
   layer.setStyle(style);
+  layer.setSource(
+    new GeoTIFF({
+      normalize: false,
+      sources: [
+        {
+          url: selectedSource,
+          projection: 'EPSG:2056',
+        },
+      ],
+    }),
+  );
 }
+
 styleSelector.addEventListener('change', update);
+sourceSelector.addEventListener('change', update);
