@@ -5,18 +5,18 @@ import GeoTIFF from "ol/source/GeoTIFF.js";
 const source = new GeoTIFF({
   sources: [
     {
-      url: "https://s2downloads.eox.at/demo/Sentinel-2/3857/R10m.tif",
-      bands: [3, 4],
-      min: 0,
+      url: "https://windwurfs1.s3.eu-central-1.amazonaws.com/S1_LRW_PD12_SP6_20150107-20150118.tif",
+      bands: [1, 2],
+      min: -30.0,
       nodata: 0,
-      max: 65535,
+      max: 30.0,
     },
     {
-      url: "https://s2downloads.eox.at/demo/Sentinel-2/3857/R60m.tif",
-      bands: [9],
-      min: 0,
+      url: "https://windwurfs1.s3.eu-central-1.amazonaws.com/S1_LRW_PD12_SP6_20150101-20150112.tif",
+      bands: [1, 2],
+      min: -30.0,
       nodata: 0,
-      max: 65535,
+      max: 30.0,
     },
   ],
 });
