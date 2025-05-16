@@ -1,9 +1,7 @@
 import Map from 'ol/Map.js';
-import TileLayer from 'ol/layer/WebGLTile.js';
 import GeoTIFF from 'ol/source/GeoTIFF.js';
 import View from 'ol/View.js';
 import TileLayer from 'ol/layer/WebGLTile.js';
-import GeoTIFF from 'ol/source/GeoTIFF.js';
 import proj4 from 'proj4';
 import {register} from 'ol/proj/proj4.js';
 import {get as getProjection} from 'ol/proj.js';
