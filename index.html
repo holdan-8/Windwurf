@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <link rel="icon" type="image/png" href="/Windwurf/assets/favicon.19ce720b.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Windwurf</title>
     
     
-    <script type="module" crossorigin src="/Windwurf/assets/index.62e32ec5.js"></script>
+    <script type="module" crossorigin src="/Windwurf/assets/index.9cf575c5.js"></script>
     <link rel="stylesheet" href="/Windwurf/assets/index.99c6c8d8.css">
   </head>
   <body>
@@ -36,12 +37,21 @@
         <label for="style">Darstellungsstil auswählen:</label>
         <select id="style">
           <option value="trueColor">True Color</option>
-          <option value="falseColor">False Color</option>
           <option value="ndvi">NDVI</option>
           <option value="ndviPalettePlasma">NDVI w/ Palette 1</option>
           <option value="ndviPaletteViridis">NDVI w/ Palette 2</option>
         </select>
-      </div>
+        <!-- const arrayOfSources = [
+  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_19_masked.tif',
+  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_19_masked.tif',
+  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_21_masked.tif',
+]; -->
+        <label for="source">Datenquelle auswählen</label>
+        <select id="source">
+            <option value="0">Windwurf 2019 (Set 1)</option>
+            <option value="1">Windwurf 2019 (Set 2)</option>
+            <option value="2">Windwurf 2021</option>
+       </div>
 
       <footer>
         Datenquelle: Sentinel / Copernicus – Verarbeitung mit EOX & OpenLayers
