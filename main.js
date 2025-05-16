@@ -112,7 +112,7 @@ const map = new Map({
   layers: [layer],
   view: new View({
     projection: 'EPSG:2056',
-    center: [2 687 000, 1 216 000],
+    center: [2687000, 1216000],
     zoom: 18,
     maxZoom: 24,
   }),
