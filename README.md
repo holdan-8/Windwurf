@@ -1,6 +1,6 @@
 # 🛰️ SwissNBR: Forest Disturbance Detection App 🇨🇭🌲
 
-Welcome to **SwissNBR**, your ultra-focused, hyperspectral-powered geek tool for detecting forest disturbances in Switzerland using the **Normalized Burn Ratio (NBR)** and Google Earth Engine. This app was built for rapid environmental insight, temporal forest change detection, and data-driven geekery during our [GEO Hackathon].
+Welcome to **SwissNBR**, your ultra-focused, hyperspectral-powered geek tool for detecting forest disturbances in Switzerland using the **Normalized Burn Ratio (NBR)** and Google Earth Engine. This app was built for rapid environmental insight, temporal forest change detection, and data-driven geekery during Data Hackdays Bern.
 
 ## 💡 What it does
 
@@ -11,7 +11,7 @@ SwissNBR lets you:
 - Compare it against the **same period in the previous year**
 - Visualize the impact using **Sentinel-2 harmonized imagery**
 - Get 🔥 `dNBR` maps and detect severe changes like wildfires or windthrow
-- Feel like a geo-superhero with one button click
+- Feel like a geo-superhero
 
 ## 🧠 Under the Hood
 
@@ -19,6 +19,7 @@ This GEE app runs a pixel-based `dNBR = NBR_post - NBR_pre` analysis. It loads S
 
 - Uses **10m cloud masks** to filter the **20m bands** used for NBR
 - Applies a **forest-only mask** from Swiss BAFU ecosystem data
+- Applies **Snow-Mask** (NDSI-Based)
 - Produces a visual stack:
   - ✅ NBR before and after (median)
   - ✅ Difference layer `dNBR`
@@ -37,9 +38,6 @@ The app gives you map layers with intuitive color palettes:
 4. Toggle layers in the map legend
 5. Inspect Swiss forests like a pro
 
-Bonus:
-- Use **Quick Select** buttons for fast time travel to past summers
-- Read the 📜 notes panel to nerd out about analysis assumptions
 
 ## 🗺️ Tech Stack
 
@@ -62,8 +60,8 @@ Forests in Switzerland face stress from windthrow, fire, and drought. This app p
 
 ## 📍 Credits
 
-Developed during the [GEO Hackathon] using Earth Engine magic and Alpine curiosity. Data powered by [Swisstopo](https://www.swisstopo.admin.ch) and [SATROMO].
+Developed during the Data Hackdays Bern using Earth Engine magic and pure curiosity. Data powered by [Swisstopo](https://www.swisstopo.admin.ch) and [SATROMO].
 
 ---
 
-🌲 **SwissNBR** – See the forest *and* the trees. 🔍🌍
+🌲  See the forest *and* the trees. 🔍🌍
