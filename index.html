@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>NDVI+NDWI from two 16-bit COGs</title>
-    <link rel="stylesheet" href="node_modules/ol/ol.css" />
+    <meta charset="UTF-8">
+    <title>Change Tile Layer Style</title>
+    <link rel="stylesheet" href="node_modules/ol/ol.css">
     <style>
       .map {
         width: 100%;
@@ -13,6 +13,14 @@
   </head>
   <body>
     <div id="map" class="map"></div>
+    Set the layer style
+    <select id="style">
+      <option value="trueColor">True Color</option>
+      <option value="falseColor">False Color</option>
+      <option value="ndvi">NDVI</option>
+      <option value="ndviPalettePlasma">NDVI w/ palette 1</option>
+      <option value="ndviPaletteViridis">NDVI w/ palette 2</option>
+    </select>
 
     <script type="module" src="main.js"></script>
   </body>
