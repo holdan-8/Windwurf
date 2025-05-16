@@ -2,6 +2,10 @@ import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import TileLayer from 'ol/layer/WebGLTile.js';
 import GeoTIFF from 'ol/source/GeoTIFF.js';
+import Map from 'ol/Map.js';
+import View from 'ol/View.js';
+import TileLayer from 'ol/layer/WebGLTile.js';
+import GeoTIFF from 'ol/source/GeoTIFF.js';
 
 const max = 3000;
 function normalize(value) {
@@ -67,30 +71,14 @@ const ndvi = {
 const ndviPalettePlasma = {
   color: [
     'palette',
-    [
-      'interpolate',
-      ['linear'],
-      red,
-      0,
-      0,
-      20,
-      4,
-    ],
+    ['interpolate', ['linear'], red, 0, 0, 20, 4],
     ['#0d0887', '#7e03a8', '#cb4778', '#f89540', '#f0f921'],
   ],
 };
 const ndviPaletteViridis = {
   color: [
     'palette',
-    [
-      'interpolate',
-      ['linear'],
-      red,
-      0,
-      0,
-      20,
-      4,
-    ],
+    ['interpolate', ['linear'], red, 0, 0, 20, 4],
     ['#440154', '#3b528b', '#21918c', '#5ec962', '#fde725'],
   ],
 };
@@ -120,7 +108,7 @@ const map = new Map({
 
 const styles = {
   trueColor,
-//  ndvi,
+  //  ndvi,
   ndviPalettePlasma,
   ndviPaletteViridis,
 };

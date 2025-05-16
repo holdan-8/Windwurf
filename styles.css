@@ -1,0 +1,77 @@
+.project-info {
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.content-box {
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+
+    max-width: 900px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('./wald.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #382e00;
+  
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+h1 {
+    /* should appear centered */
+    text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+#map {
+    /* should appear centered */
+    
+    background-color: #f0f0f0;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  transition: border-color 0.3s ease;
+}
+select:focus {
+  outline: none;
+  border-color: #007acc;
+}
+footer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #777;
+}
