@@ -29,8 +29,12 @@
         </p>
       </section>
 
-      <div id="iframe"><iframe src="https://waldmonitoring.ch/veraenderung?layers=waldmonitoring%3Andvi_decrease_2021_2020&opacity=0.9&visibility=true&x=956168&y=5955162&zoom=14.0000"></iframe></div>
-
+      <div id="iframe" class="map">
+        <iframe
+          src="https://waldmonitoring.ch/veraenderung?layers=waldmonitoring%3Andvi_decrease_2021_2020&opacity=0.9&visibility=true&x=956168&y=5955162&zoom=14.0000"
+        ></iframe>
+      </div>
+      <!-- 
       <div id="map" class="map"></div>
 
       <div class="controls">
@@ -41,11 +45,7 @@
           <option value="ndviPalettePlasma">NDVI w/ Palette 1</option>
           <option value="ndviPaletteViridis">NDVI w/ Palette 2</option>
         </select>
-        <!-- const arrayOfSources = [
-  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_19_masked.tif',
-  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_19_masked.tif',
-  'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_21_masked.tif',
-]; -->
+
         <label for="source">Datenquelle auswählen</label>
         <select id="source">
             <option value="0">Windwurf 2019 (Set 1)</option>
@@ -57,7 +57,7 @@
         Datenquelle: Sentinel / Copernicus – Verarbeitung mit EOX & OpenLayers
       </footer>
 
-      <script type="module" src="main.js"></script>
+      <script type="module" src="main.js"></script> -->
     </div>
   </body>
 </html>
