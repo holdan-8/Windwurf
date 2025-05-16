@@ -19,7 +19,7 @@ const ndvi = {
   color: [
     'interpolate',
     ['linear'],
-    ['*', '30', red],
+    ['*', 30, red],
     // color ramp for NDVI values, ranging from -1 to 1
     -0.2,
     [191, 191, 191],
