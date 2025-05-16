@@ -9,17 +9,9 @@ function normalize(value) {
 }
 
 const red = normalize(['band', 1]);
-const green = normalize(['band', 2]);
-const blue = normalize(['band', 3]);
-const nir = normalize(['band', 4]);
 
 const trueColor = {
-  color: ['array', red, green, blue, 1],
-  gamma: 1.1,
-};
-
-const falseColor = {
-  color: ['array', nir, red, green, 1],
+  color: ['array', red, 0, 0, 1],
   gamma: 1.1,
 };
 
@@ -27,7 +19,7 @@ const ndvi = {
   color: [
     'interpolate',
     ['linear'],
-    ['/', ['-', nir, red], ['+', nir, red]],
+    ['*', '30', red],
     // color ramp for NDVI values, ranging from -1 to 1
     -0.2,
     [191, 191, 191],
@@ -78,10 +70,10 @@ const ndviPalettePlasma = {
     [
       'interpolate',
       ['linear'],
-      ['/', ['-', nir, red], ['+', nir, red]],
-      -0.2,
+      red,
       0,
-      0.65,
+      0,
+      20,
       4,
     ],
     ['#0d0887', '#7e03a8', '#cb4778', '#f89540', '#f0f921'],
@@ -93,10 +85,10 @@ const ndviPaletteViridis = {
     [
       'interpolate',
       ['linear'],
-      ['/', ['-', nir, red], ['+', nir, red]],
-      -0.2,
+      red,
       0,
-      0.65,
+      0,
+      20,
       4,
     ],
     ['#440154', '#3b528b', '#21918c', '#5ec962', '#fde725'],
@@ -109,7 +101,7 @@ const layer = new TileLayer({
     normalize: false,
     sources: [
       {
-        url: 'https://s2downloads.eox.at/demo/EOxCloudless/2020/rgbnir/s2cloudless2020-16bits_sinlge-file_z0-4.tif',
+        url: 'https://windwurfs1.s3.dualstack.eu-central-1.amazonaws.com/subset/WI_1_masked_ZG_Int8_pos.tif',
       },
     ],
   }),
@@ -119,17 +111,16 @@ const map = new Map({
   target: 'map',
   layers: [layer],
   view: new View({
-    projection: 'EPSG:4326',
-    center: [0, 0],
-    zoom: 2,
-    maxZoom: 6,
+    projection: 'EPSG:2056',
+    center: [2 687 000, 1 216 000],
+    zoom: 18,
+    maxZoom: 24,
   }),
 });
 
 const styles = {
   trueColor,
-  falseColor,
-  ndvi,
+//  ndvi,
   ndviPalettePlasma,
   ndviPaletteViridis,
 };
